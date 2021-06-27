@@ -48,6 +48,9 @@ export default function ProjectForm() {
   };
   const addProject = async (e) => {
     e.preventDefault();
+    if(title === '' || description === '') {
+      return
+    }
     setLoading(true)
     const newProjects = [...projects];
     newProjects.push({
