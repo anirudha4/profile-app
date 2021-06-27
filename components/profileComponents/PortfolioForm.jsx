@@ -26,6 +26,7 @@ export default function PortfolioForm() {
   };
   useEffect(() => {
     if(userMeta) {
+      console.log(userMeta);
       setSkills(userMeta.skills)
       setBio(userMeta.bio)
       setDesignation(userMeta.designation)
@@ -35,6 +36,7 @@ export default function PortfolioForm() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
+    console.log(skills);
     const data = {...userMeta, skills, designation, bio, username: username.toLowerCase()}
     const temp = await fire.collection('user-meta').doc(user.uid).set(data)
     setUserMeta({...userMeta, skills, designation, bio, username: username.toLowerCase()})
