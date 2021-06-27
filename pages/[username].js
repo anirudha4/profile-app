@@ -17,23 +17,44 @@ export default function User({meta}) {
     </motion.main>
   )
 }
-export async function getStaticPaths() {
-  const usernames = []
-  const data = await fire.collection('user-meta').get()
-  data.forEach(doc => {
-    usernames.push(
-      {
-        params: {username: doc.data().username}
-      }
-    )
-  })
-  return {
-    paths:usernames,
-    fallback: true
-  };
-}
+// export async function getStaticPaths() {
+//   const usernames = []
+//   const data = await fire.collection('user-meta').get()
+//   data.forEach(doc => {
+//     usernames.push(
+//       {
+//         params: {username: doc.data().username}
+//       }
+//     )
+//   })
+//   return {
+//     paths:usernames,
+//     fallback: true
+//   };
+// }
 
-export async function getStaticProps({params}) {
+// export async function getStaticProps({params}) {
+//   const username = params.username;
+
+//   const userData = await fire.collection('user-meta').where('username', '==', username).get()
+//   let meta = {}
+//   userData.forEach(doc => {
+//     meta = {
+//       id: doc.id,
+//       ...doc.data()
+//     }
+//   })
+
+//   return {
+//     props: {
+//       meta
+//     },
+//     revalidate: 5
+//   }
+// }
+
+
+export async function getServerSideProps({params}) {
   const username = params.username;
 
   const userData = await fire.collection('user-meta').where('username', '==', username).get()
@@ -48,7 +69,6 @@ export async function getStaticProps({params}) {
   return {
     props: {
       meta
-    },
-    revalidate: 5
+    }
   }
 }
