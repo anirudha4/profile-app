@@ -121,6 +121,7 @@ export default function ProjectForm() {
             onChange={(e) => setStack(e.target.value)}
             onKeyDown={handleAddStack}
           />
+          <span className={styles.note}>Press tab to add</span>
           <div className={styles.chipContainer}>
             {techStack.length !== 0 &&
               techStack.map((s, ind) => (

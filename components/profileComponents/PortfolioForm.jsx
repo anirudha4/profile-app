@@ -78,6 +78,7 @@ export default function PortfolioForm() {
             value={skill}
             onKeyDown={handleAddSkill}
           />
+          <span className={styles.note}>Press tab to add skill</span>
           <div className={styles.chipContainer}>
             {skills.length !== 0 &&
               skills.map((s, ind) => (

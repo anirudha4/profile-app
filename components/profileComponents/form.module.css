@@ -23,7 +23,12 @@
   font-weight: 500;
   color: var(--text-color);
 }
-
+.field span.note {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--text-color);
+}
 .field input:focus,
 .field textarea:focus {
   border-bottom: 2px solid var(--primary);
