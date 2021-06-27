@@ -34,8 +34,7 @@ export const AuthContextProvider = ({children}) => {
     const [userMeta, setUserMeta] = useState(null)
     useEffect(() => {
         if(user) {
-            fire.collection('user-meta').doc(user.uid).get()
-            .then(meta => {
+            fire.collection('user-meta').doc(user.uid).onSnapshot(meta => {
                 setUserMeta(meta.data())
             })
         }
