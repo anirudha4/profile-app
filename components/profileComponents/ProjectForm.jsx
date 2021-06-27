@@ -28,6 +28,9 @@ export default function ProjectForm() {
       console.log(userMeta.projects);
     }
   }, [userMeta])
+  useEffect(() => {
+    setUserMeta(userMeta, projects)
+  }, [projects])
   const clear = () => {
     setTitle("");
     setDescription("");
@@ -54,11 +57,10 @@ export default function ProjectForm() {
       github,
       liveurl,
     });
-    setProjects(newProjects)
     const temp = await fire.collection('user-meta').doc(user.uid).set({...userMeta, projects: [...newProjects]})
+    setProjects(newProjects)
     setLoading(false)
     setSuccess(true)
-
     clear();
   };
   return (
