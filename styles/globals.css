@@ -49,6 +49,7 @@ main.cards {
   padding: 30px;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
+  margin-bottom: 20px;
 }
 
 .card-profile {
