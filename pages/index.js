@@ -42,6 +42,7 @@ export async function getStaticProps() {
   return {
     props: {
       users
-    }
+    },
+    revalidate: 1
   }
 }
