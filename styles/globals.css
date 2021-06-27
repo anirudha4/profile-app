@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --background: #F9FBFF;
+  --primary: #2F2789;
+  --secondary: #EBE9FF;
+  --shadow: 3px 3px 10px 8px rgba(0,0,0,0.01);
+  --radius: 5px;
+  --text-color: #444;
+  --light: #828282;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--background);
+}
+
+a{
+  text-decoration: none;
+}
+.loader-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.cards {  
+  margin-top: 30px;
+  padding: 0 20px;
+  display: flex;
+}
+.left{
+  width: fit-content;
+}
+.right {
+  margin-left: 40px;
+  flex: 1;
+}
+.card{
+  background-color: var(--white);
+  /* width: fit-content; */
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.card-profile {
+  width: 350px;
+}
+.card-skills {
+  margin-top: 20px;
+  width: 350px;
+}
+
+/* masonry */
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.alert {
+  padding: 15px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius);
+}
+.alert svg {
+  cursor: pointer;
+}
+
+

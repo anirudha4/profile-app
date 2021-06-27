@@ -1,0 +1,23 @@
+.userList {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.userGrid {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message {
+    padding: 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: 15px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

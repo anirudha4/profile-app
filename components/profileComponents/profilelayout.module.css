@@ -1,0 +1,29 @@
+.profileLayout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  max-width: 900px;
+  margin: 60px auto;
+  gap: 30px;
+}
+
+.sidebar {
+  list-style-type: none;
+  /* display: flex; */
+}
+.sidebar li {
+  padding: 10px;
+}
+.sidebar li a {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+.profileRight {
+  flex: 1;
+}
+
+.active {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
