@@ -11,8 +11,8 @@ export default function SkillsCard({skills}) {
                 <div className={styles.skills}>
                     {skills.length > 0 ? (
                         <>
-                            {skills.map(skill => (
-                                <div className={styles.skill}>{skill}</div>
+                            {skills.map((skill, idx) => (
+                                <div key={idx} className={styles.skill}>{skill}</div>
                             ))}
                         </>
                     ) : (
