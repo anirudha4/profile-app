@@ -8,7 +8,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-
 .message {
     padding: 20px;
     background-color: var(--secondary);
