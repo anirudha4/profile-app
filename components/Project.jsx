@@ -45,9 +45,9 @@ export default function Project({projects}) {
             ) : (
                 <motion.div className="alert" initial={{opacity: 0, x: -100}} animate={{opacity: 1, x: 0}} style={{marginTop: 30}}>
                     No Projects
-                    <Link href="/add-project" as="add-project">
+                    {/* <Link href="/add-project" as="add-project">
                         <a className="alert-action">Add</a>
-                    </Link>
+                    </Link> */}
                 </motion.div>
             )}
         </>

@@ -28,7 +28,26 @@ export default function Home({users}) {
 }
 
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const data = await fire.collection('user-meta').get()
+//   let users = []
+//   data.forEach(doc => {
+//     users.push(
+//       {
+//         id: doc.id,
+//         ...doc.data()
+//       }
+//     )
+//   })
+//   return {
+//     props: {
+//       users
+//     },
+//     revalidate: 1
+//   }
+// }
+
+export async function getServerSideProps() {
   const data = await fire.collection('user-meta').get()
   let users = []
   data.forEach(doc => {
@@ -42,7 +61,6 @@ export async function getStaticProps() {
   return {
     props: {
       users
-    },
-    revalidate: 1
+    }
   }
 }

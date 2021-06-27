@@ -18,9 +18,9 @@ export default function SkillsCard({skills}) {
                     ) : (
                         <motion.div className="alert" initial={{opacity: 0, x: -100}} animate={{opacity: 1, x: 0}} style={{marginTop: 30}}>
                             No Skills
-                            <Link href="/profile" as="add-project">
+                            {/* <Link href="/profile" as="add-project">
                                 <a className="alert-action">Add</a>
-                            </Link>
+                            </Link> */}
                          </motion.div>
                     )}
                 </div>
