@@ -40,6 +40,12 @@ export const AuthContextProvider = ({children}) => {
             })
         }
     }, [user])
+    // useEffect(() => {
+    //     fire.collection('user-meta').doc(user.uid).get()
+    //         .then(meta => {
+    //             setUserMeta(meta.data())
+    //     })
+    // }, [userMeta])
     const logout = () => {
         auth.signOut()
         router.replace('/')
@@ -85,7 +91,7 @@ export const AuthContextProvider = ({children}) => {
         )
     }
     return (
-        <AuthContext.Provider value={{user, login, logout, userMeta}}>
+        <AuthContext.Provider value={{user, login, logout, userMeta, setUserMeta}}>
             {children}
         </AuthContext.Provider>
     )

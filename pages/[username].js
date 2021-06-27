@@ -8,7 +8,7 @@ export default function User({meta}) {
     <motion.main className="cards" exit={{opacity: 0}} initial={{opacity: 0}} animate={{opacity: 1}}>
         <div className="left">
             <UserCard designation={meta.designation} name={meta.name} socials={meta.socials} photoURL={meta.photoURL} username={meta.username} />
-            <SkillsCard />
+            <SkillsCard skills={meta.skills} />
         </div>
         <div className="right">
             <h1>Projects</h1>

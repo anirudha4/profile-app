@@ -89,6 +89,7 @@ main.cards {
   color: var(--primary);
   font-size: 15px;
   font-weight: 500;
+  width: 100% !important;
   display: flex;
   align-items: center;
   justify-content: space-between;

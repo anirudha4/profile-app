@@ -14,7 +14,7 @@ export default function AccountForm() {
           <div style={{display: "flex", alignItems: "center"}}>
               <FeatherIcon icon="info" className={styles.infoIcon} />
               &nbsp;
-              These features are in development
+              Features in Development
           </div>
         </motion.div>
       <form onSubmit={handleSubmit}>

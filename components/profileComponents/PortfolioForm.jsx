@@ -13,7 +13,7 @@ export default function PortfolioForm() {
   const [skill, setSkill] = useState("");
   const [loading, setLoading] = useState(false)
   const [bio, setBio] = useState("");
-  const {userMeta, user} = useContext(AuthContext)
+  const {userMeta, setUserMeta, user} = useContext(AuthContext)
   const [success, setSuccess] = useState(false)
   //skills
   const handleAddSkill = (e) => {
@@ -37,6 +37,7 @@ export default function PortfolioForm() {
     setLoading(true)
     const data = {...userMeta, skills, designation, bio, username: username.toLowerCase()}
     const temp = await fire.collection('user-meta').doc(user.uid).set(data)
+    setUserMeta({...userMeta, skills, designation, bio, username: username.toLowerCase()})
     setLoading(false)
     setSuccess(true)
   }
