@@ -12,7 +12,9 @@
     display: flex;
     align-items: center;
 }
-
+.navbar .left .logo {
+    cursor: pointer;
+}
 .navbar .right .name{
     margin-right: 20px;
     font-size: 15px;
@@ -77,4 +79,18 @@
     .navbar .right .profile {
         display: none;
     }
+    .logout {
+        width: fit-content;
+    }
+    .logout span {
+        display: none;
+    }
+    .logout svg {
+        margin: 0;
+    }
+    
+.navbar .right .name{
+    margin-right: 10px;
+}
+
 }
