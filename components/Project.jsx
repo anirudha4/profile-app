@@ -6,8 +6,7 @@ import { motion } from 'framer-motion'
 export default function Project({projects}) {
     const breakpointColumnsObj = {
         default: 2,
-        1100: 2,
-        700: 2,
+        1000: 1,
         500: 1
       };
     const items = projects.map((project) => (
