@@ -71,3 +71,10 @@
     cursor: pointer;
     border-radius: var(--radius);
 }
+
+
+@media (max-width: 460px) {
+    .navbar .right .profile {
+        display: none;
+    }
+}

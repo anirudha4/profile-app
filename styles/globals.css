@@ -104,12 +104,19 @@ main.cards {
 
 
 @media (max-width: 500px) {
+  .left {
+    width: 100%;
+  }
   main.cards {
     flex-direction: column;
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
   .my-masonry-grid_column  {
+    background-clip: initial;
     padding-left: 0px;
+  }
+  .my-masonry-grid {
+    margin: 0;
   }
   .card-profile{
     width: 100%;
@@ -117,5 +124,11 @@ main.cards {
   .card-skills {
     width: 100%;
     margin-bottom: 30px;
+  }
+  .right {
+    margin: 0;
+  }
+  .layout {
+    padding: 0;
   }
 }

@@ -11,7 +11,7 @@ export default function User({meta}) {
             <SkillsCard skills={meta.skills} />
         </div>
         <div className="right">
-            <h1>Projects</h1>
+            <h1 className="project-title">Projects</h1>
             <Projects projects={meta.projects} />
         </div>
     </motion.main>
