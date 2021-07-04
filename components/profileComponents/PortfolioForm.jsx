@@ -15,6 +15,7 @@ export default function PortfolioForm() {
   const [bio, setBio] = useState("");
   const {userMeta, setUserMeta, user} = useContext(AuthContext)
   const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
   //skills
   const handleAddSkill = (e) => {
     console.log(e.key);
@@ -35,6 +36,14 @@ export default function PortfolioForm() {
   }, [userMeta])
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if(username === '') {
+      setError('Username cannot be empty');
+      return
+    }
+    if(username.length > 15) {
+      setError('Username should be less than 15 characters')
+      return
+    }
     setLoading(true)
     console.log(skills);
     const data = {...userMeta, skills, designation, bio, username: username.toLowerCase()}
@@ -52,6 +61,12 @@ export default function PortfolioForm() {
         </motion.div>
       )}
       <form onSubmit={handleSubmit}>
+        {error && (
+          <motion.div initial={{ x: -100, opacity: .2 }} animate={{ x: 0, opacity: 1 }} className={styles.error}>
+            {error}
+            <FeatherIcon onClick={e => setError('')} icon={'x'} size={18} color='rgb(255, 93, 35)' />
+          </motion.div>
+        )}
         <div className={styles.field}>
           <label htmlFor="username">Username</label>
           <input type="text" name="username" onChange={e => setUsername(e.target.value)} value={username}  />

@@ -5,8 +5,11 @@
 
 .userGrid {
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
 }
 .message {
     padding: 20px;
@@ -19,4 +22,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (max-width: 460px) {
+    .userGrid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
 }

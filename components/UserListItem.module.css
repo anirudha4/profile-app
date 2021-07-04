@@ -2,16 +2,16 @@
     background-color: var(--white);
     padding: 20px;
     box-shadow: var(--shadow);
-    margin: 0 20px;
-    margin-bottom: 20px;
-    width: 380px;
+    /* margin: 0 20px; */
+    /* width: 380px; */
 }
 .userCard:nth-child(1) {
     margin-left: 0;
 }
 .cardbody {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
 }
 .userimage{
     width: 50px;

@@ -3,8 +3,13 @@ import styles from './project.module.css'
 import Masonry from 'react-masonry-css'
 import FeatherIcon from 'feather-icons-react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 export default function Project({projects}) {
+    const breakpointColumnsObj = {
+        default: 2,
+        1100: 2,
+        700: 2,
+        500: 1
+      };
     const items = projects.map((project) => (
         <div className="card" style={{marginTop: 20}} key={project.id}>
             <div className={styles.projectName}>{project.title}</div>
@@ -36,7 +41,7 @@ export default function Project({projects}) {
         <>
             {projects.length > 0 ? (
                 <Masonry
-                    breakpointCols={2}
+                    breakpointCols={breakpointColumnsObj}
                     className="my-masonry-grid"
                     columnClassName="my-masonry-grid_column"
                 >
